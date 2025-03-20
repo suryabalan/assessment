@@ -41,7 +41,7 @@ public class AccountController {
 
   @GetMapping("/accounts/{id}")
   public ResponseEntity<AccountEntity> getAccountById(@PathVariable("id") String id) {
-    Optional<AccountEntity> account = accountRepository.findById(id);
+    Optional<AccountEntity> account = null;
 
     if (account.isPresent()) {
       return new ResponseEntity<>(account.get(), HttpStatus.OK);
